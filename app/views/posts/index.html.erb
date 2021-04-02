@@ -1,0 +1,13 @@
+<h1>TopPage</h1>
+<%= link_to '新規投稿','/posts/new' %> <!-- HTTPメソッド（GET)は省略されている-->
+<% @posts.each do |post| %>
+ <div class="post">
+  <div class="post-date">
+    投稿日時：<%= post.created_at %>
+    </div>
+    <div class="post-content">
+      <%= post.content %>
+    </div> 
+  </div>
+  <!-- <%= %>で囲った中に変数を埋め込むことでRubyのコードをHTMLに埋め込める -->
+<% end %> <!-- 表示させたくない文については”=”を抜くことで非表示にできる -->
